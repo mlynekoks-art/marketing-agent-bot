@@ -160,6 +160,9 @@ Przykład: /email Promocja Black Friday
 /script <temat> - Skrypt do filmu
 Przykład: /script Prezentacja nowego produktu
 
+/image <opis> - Prompt do generowania obrazu AI
+Przykład: /image Nowoczesne logo firmy tech
+
 💬 NATURALNA KONWERSACJA:
 Możesz też po prostu napisać:
 - "Stwórz post o kawie"
@@ -329,6 +332,52 @@ async def generate_script(update: Update, context: ContextTypes.DEFAULT_TYPE):
         logger.error(f"Error generating script: {e}")
         await update.message.reply_text("❌ Wystąpił błąd podczas generowania skryptu. Spróbuj ponownie!")
 
+async def generate_image(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Generate image using AI (placeholder for future integration)"""
+    if not context.args:
+        await update.message.reply_text("❌ Podaj opis obrazu!\nPrzykład: /image Nowoczesny design logo dla firmy tech")
+        return
+    
+    description = ' '.join(context.args)
+    await update.message.reply_text(f"🎨 Generuję obraz: {description}...")
+    
+    # Note: Gemini 3 Pro doesn't have built-in image generation
+    # This would require integration with:
+    # - Google Imagen 3 API
+    # - DALL-E 3 API (OpenAI)
+    # - Stable Diffusion API
+    # - Midjourney API
+    
+    prompt = f"""Stwórz szczegółowy prompt do generowania obrazu AI dla: {description}
+
+Uwzględnij:
+- Styl wizualny i estetykę
+- Kolory i nastrój
+- Kompozycję i perspektywę
+- Szczegóły techniczne (rozdzielczość, format)
+- Słowa kluczowe dla AI image generator
+
+Prompt powinien być w języku angielskim, szczegółowy i zoptymalizowany pod generatory obrazów AI."""
+
+    try:
+        response = model.generate_content(prompt)
+        result = f"🎨 **Prompt do generowania obrazu:**\n\n{response.text}\n\n"
+        result += "ℹ️ **Jak użyć:**\n"
+        result += "1. Skopiuj powyższy prompt\n"
+        result += "2. Wklej do generatora AI (DALL-E, Midjourney, Stable Diffusion)\n"
+        result += "3. Dostosuj parametry według potrzeb\n\n"
+        result += "💡 **Polecane narzędzia:**\n"
+        result += "• DALL-E 3 (OpenAI)\n"
+        result += "• Midjourney\n"
+        result += "• Stable Diffusion\n"
+        result += "• Google Imagen 3"
+        
+        await update.message.reply_text(result)
+    except Exception as e:
+        logger.error(f"Error generating image prompt: {e}")
+        await update.message.reply_text("❌ Wystąpił błąd podczas generowania promptu. Spróbuj ponownie!")
+
+
 async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Handle natural language messages"""
     user_message = update.message.text
@@ -364,7 +413,8 @@ def main():
     application.add_handler(CommandHandler("thread", generate_thread))
     application.add_handler(CommandHandler("ad", generate_ad))
     application.add_handler(CommandHandler("email", generate_email))
-    application.add_handler(CommandHandler("script", generate_script))
+    application.add_handler(CommandHandler("script", generate_script)
+                               application.add_handler(CommandHandler("image", generate_image)))
     application.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message))
     
     # Start bot
