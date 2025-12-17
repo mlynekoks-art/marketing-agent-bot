@@ -102,7 +102,28 @@ Skrypt powinien zawierać:
 
 Temat: {topic}
 Długość: {duration} sekund
-Platforma: {platform}"""
+Platforma: {platform}""",
+
+    'video': """Stwórz szczegółowy prompt do generowania filmu AI marketingowego.
+
+Temat: {topic}
+Długość: {duration}
+Platforma: {platform}
+
+Prompt powinien zawierać:
+- Opis sceny i akcji (visual storytelling)
+- Styl wizualny i estetykę
+- Ruchy kamery i kompozycję
+- Oświetlenie i kolory
+- Muzykę i dźwięk
+- Tekst/napisy na ekranie
+- Tempo i dynamikę
+
+Prompt w języku angielskim, zoptymalizowany pod:
+- Runway ML Gen-3
+- Pika Labs 1.5
+- Stable Video Diffusion
+- Google Veo 2"""
 }
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -162,6 +183,8 @@ Przykład: /script Prezentacja nowego produktu
 
 /image <opis> - Prompt do generowania obrazu AI
 Przykład: /image Nowoczesne logo firmy tech
+    /video <opis> - Prompt do generowania filmu AI
+    Przykład: /video Prezentacja produktu | 30s | TikTok
 
 💬 NATURALNA KONWERSACJA:
 Możesz też po prostu napisać:
@@ -276,7 +299,37 @@ async def generate_ad(update: Update, context: ContextTypes.DEFAULT_TYPE):
     try:
         response = model.generate_content(prompt)
         await update.message.reply_text(f"📢 Reklama ({platform}):\n\n{response.text}")
+    380
+
+    async def generate_video(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Generate video prompt for AI video generators"""
+    if not context.args:
+        await update.message.reply_text("❌ Podaj opis filmu!\n\nPrzykład: /video Prezentacja nowego produktu | 30s | TikTok")
+        return
+    
+    topic = ' '.join(context.args)
+    await update.message.reply_text("🎬 Tworzę prompt do filmu... Chwilę!")
+    
+    # Parse parameters
+    parts = topic.split('|')
+    main_topic = parts[0].strip()
+    duration = parts[1].strip() if len(parts) > 1 else "30s"
+    platform = parts[2].strip() if len(parts) > 2 else "TikTok"
+    
+    prompt = MARKETING_PROMPTS['video'].format(
+        topic=main_topic,
+        duration=duration,
+        platform=platform
+    )
+    
+    try:
+        response = model.generate_content(prompt)
+        await update.message.reply_text(f"🎬 Prompt do filmu ({duration}), {platform}):\n\n{response.text}")
     except Exception as e:
+        logger.error(f"Error generating video prompt: {e}")
+        await update.message.reply_text("❌ Wystąpił błąd podczas generowania promptu do filmu. Spróbuj ponownie!")
+
+    
         logger.error(f"Error generating ad: {e}")
         await update.message.reply_text("❌ Wystąpił błąd podczas generowania reklamy. Spróbuj ponownie!")
 
@@ -332,7 +385,8 @@ async def generate_script(update: Update, context: ContextTypes.DEFAULT_TYPE):
         logger.error(f"Error generating script: {e}")
         await update.message.reply_text("❌ Wystąpił błąd podczas generowania skryptu. Spróbuj ponownie!")
 
-async def generate_image(update: Update, context: ContextTypes.DEFAULT_TYPE):
+async 377
+(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Generate image using AI (placeholder for future integration)"""
     if not context.args:
         await update.message.reply_text("❌ Podaj opis obrazu!\nPrzykład: /image Nowoczesny design logo dla firmy tech")
@@ -415,6 +469,7 @@ def main():
     application.add_handler(CommandHandler("email", generate_email))
     application.add_handler(CommandHandler("script", generate_script)
                                application.add_handler(CommandHandler("image", generate_image)))
+        application.add_handler(CommandHandler("video", generate_video))
     application.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message))
     
     # Start bot
