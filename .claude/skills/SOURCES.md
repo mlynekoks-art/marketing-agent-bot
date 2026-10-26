@@ -15,6 +15,13 @@ Skille w tym folderze Claude Code ładuje automatycznie dla tego projektu.
 | find-skills | https://github.com/vercel-labs/skills | a80e4c9 |
 | agent-browser (wymaga CLI: scripts/install-tools.sh) | https://github.com/vercel-labs/agent-browser | 04ba526 |
 | reverse-engineer-anything (MCP w .mcp.json) | https://github.com/morluto/rea | 8a65787 |
+| gamedev-router + 76 skilli do gier (Godot, Unity, Unreal, Roblox, Phaser, PixiJS, three.js, Bevy, Defold, LÖVE, pygame, Ebitengine, gatunki, dyscypliny, wydawanie) | https://github.com/gamedev-skills/awesome-gamedev-agent-skills (Apache-2.0) | 184b72b |
+| 33 oficjalne skille Android (Jetpack Compose, Gradle, profiler, bezpieczeństwo, Wear, TV, XR) | https://github.com/android/skills (Apache-2.0) | 4ebabf2 |
+| 31 oficjalnych skilli Flutter / Dart | https://github.com/flutter/skills (BSD-3) | f813a46 |
+| 24 oficjalne skille Expo / EAS (React Native) | https://github.com/expo/skills (MIT) | d5caf7f |
+
+Router gier oryginalnie nazywa się `router`, tu przemianowany na `gamedev-router`. Skille leżą płasko, więc ścieżki `skills/<silnik>/...` w routerze oznaczają `.claude/skills/<nazwa-skilla>/`.
+Pełne teksty licencji: `.claude/licenses/`.
 
 GSD (https://github.com/open-gsd/gsd-core) instaluje się tylko własnym instalatorem: patrz scripts/install-tools.sh.
 

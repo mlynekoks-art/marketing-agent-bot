@@ -1,0 +1,14 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo 'Przypomnienie: przed każdym zadaniem sam dobierz i wywołaj pasujące skille według mapy w CLAUDE.md (gry: zacznij od gamedev-router; brak skilla: find-skills). Nie czekaj, aż użytkownik je wskaże.'"
+          }
+        ]
+      }
+    ]
+  }
+}
