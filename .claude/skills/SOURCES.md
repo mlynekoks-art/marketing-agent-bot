@@ -19,6 +19,8 @@ Skille w tym folderze Claude Code ładuje automatycznie dla tego projektu.
 | 33 oficjalne skille Android (Jetpack Compose, Gradle, profiler, bezpieczeństwo, Wear, TV, XR) | https://github.com/android/skills (Apache-2.0) | 4ebabf2 |
 | 31 oficjalnych skilli Flutter / Dart | https://github.com/flutter/skills (BSD-3) | f813a46 |
 | 24 oficjalne skille Expo / EAS (React Native) | https://github.com/expo/skills (MIT) | d5caf7f |
+| caveman, ultracave, megacave, caveman-compress, caveman-commit (oszczędzanie tokenów) | https://github.com/JuliusBrussee/caveman (Apache-2.0 / MIT) | 9b68f7e |
+| context-mode, ctx-stats, ctx-search, ctx-doctor (+ MCP w .mcp.json) | https://github.com/mksglu/context-mode (Elastic License 2.0) | 8b74cbb |
 
 Router gier oryginalnie nazywa się `router`, tu przemianowany na `gamedev-router`. Skille leżą płasko, więc ścieżki `skills/<silnik>/...` w routerze oznaczają `.claude/skills/<nazwa-skilla>/`.
 Pełne teksty licencji: `.claude/licenses/`.

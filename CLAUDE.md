@@ -66,6 +66,15 @@ Skille projektu leżą płasko w `.claude/skills/<nazwa>/`. Źródła i licencje
 | Dokumenty | `docx`, `xlsx`, `pdf`, `doc-coauthoring` |
 | Serwer MCP / integracja API | `mcp-builder` |
 
+## Oszczędzanie limitów i kontekstu
+
+- Odpowiedzi krótkie: najpierw wynik, bez wstępów i powtórzeń. Na prośbę „krócej” / „caveman” włącz `caveman`.
+- Duże wyniki komend, logi, strony www i długie pliki przepuszczaj przez MCP `context-mode`, gdy jest dostępne (`context-mode`, `ctx-search`). Pliki czytaj fragmentami (offset/limit, grep), nie w całości.
+- Nie uruchamiaj subagentów bez potrzeby: każdy startuje od zera i zużywa limit.
+- Długa sesja: zapisz stan w `STATE.md` i zaproponuj `/compact` albo nową sesję.
+- Do commitów: `caveman-commit`. Do skracania dużych plików instrukcji: `caveman-compress` (najpierw zrób kopię).
+- Zużycie kontekstu i oszczędności: `ctx-stats`. Problemy z context-mode: `ctx-doctor`.
+
 ## Zasady pracy
 
 - Duże zadania: stan pracy zapisuj w `STATE.md` (co zrobione, co dalej). Nie polegaj na pamięci rozmowy.
