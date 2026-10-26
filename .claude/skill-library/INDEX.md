@@ -1,0 +1,179 @@
+# Biblioteka skilli (ładowana na żądanie)
+
+Te skille nie ładują się na starcie sesji, żeby oszczędzać kontekst. Użycie: przeczytaj `.claude/skill-library/<nazwa>/SKILL.md` narzędziem Read i postępuj według niego, tak jak po wywołaniu skilla. Pliki z `references/` czytaj tylko w razie potrzeby.
+
+## Gry (76)
+
+- `ai-behavior-trees-utility-ai`: Build a production behavior-tree runtime (Blackboard, action/condition leaves, sequence/selector/parallel composites, decorators) and a Utility AI sys
+- `audio-design`: Implement game audio practice — bus/mixer architecture and gain in decibels, ducking (sidechain), adaptive/dynamic music via layering and re-sequencin
+- `bevy-ecs`: Structure a Bevy app around its Entity Component System: build the App with plugins, define Component/Resource types, write systems with Query/Res/Com
+- `camera-systems`: Build game cameras that feel good — 2D follow with a deadzone, look-ahead, smoothing, and level-bounds clamping; 3D third-person orbit with collision 
+- `card-game`: Build a card game: card data, deck/hand/discard zones, draw/shuffle/reshuffle, a turn structure, costs, and effect resolution
+- `create-game-assets`: Plan, generate, source, normalize, and validate cohesive visual game assets
+- `defold-core`: Build and debug the core of a Defold game in Lua: game.project settings, collections, game objects and components, script lifecycle and self state, go
+- `dialogue-systems`: Build branching dialogue and narrative — a node/choice graph with conditions, variables, and localization hooks — and choose between authoring tools I
+- `ebitengine-game`: Create, improve, debug and package playable 2D games in Go with Ebitengine (github.com/hajimehoshi/ebiten/v2)
+- `fps-shooter`: Build a first-person shooter: move+mouse-look controller, hitscan or projectile shooting, weapons, health, and enemy AI
+- `game-ai`: Design NPC and enemy decision-making with finite state machines, behavior trees, steering behaviors, and A* pathfinding — engine-neutral algorithms th
+- `game-feel`: Add "juice" and game feel that makes actions satisfying — screen shake, hit-stop/freeze frames, tweened/eased motion, squash & stretch, knockback, and
+- `game-jam`: Plan and ship a game under a jam deadline: lock scope to the clock, schedule the hours, cut features, and submit on time
+- `game-ui-ux`: Design and build game UI/UX — HUDs, menus, and overlays — that survive every screen: anchor- based responsive layout, resolution/aspect scaling and sa
+- `godot-2d-movement`: Implement 2D kinematic character movement in Godot 4.7 with CharacterBody2D and move_and_slide(): platformer run/jump with gravity, top-down 8-directi
+- `godot-3d-essentials`: Set up a Godot 4.7 3D scene: Node3D transforms, Camera3D, lighting (DirectionalLight3D/OmniLight3D), WorldEnvironment for sky/ambient/tonemap/post, Me
+- `godot-animation`: Animate in Godot 4.7 three ways: AnimationPlayer for keyframed clips (incl
+- `godot-audio`: Play and mix audio in Godot 4.7: AudioStreamPlayer (2D/3D variants), audio buses with volume/mute and effects, music vs SFX routing, db/linear volume,
+- `godot-csharp`: Use C#/.NET in Godot 4.7: partial classes extending nodes, the PascalCase lifecycle (_Ready/_Process/_PhysicsProcess), [Export] fields, [Signal] deleg
+- `godot-export`: Export and build a Godot 4.7 project for distribution: install export templates, define export presets (Windows/macOS/Linux/Web/Android), run headless
+- `godot-gdscript`: Write idiomatic GDScript for Godot 4.7: static typing, the node lifecycle (_ready/_process/_physics_process), @export/@onready/@tool annotations, sign
+- `godot-gdscript-headless-testing`: Run GDScript test suites from the command line with `godot --headless`, using a SceneTree/MainLoop runner script that exits non-zero on failure so CI 
+- `godot-multiplayer`: Build networked games with Godot 4.7 high-level multiplayer: set up an ENetMultiplayerPeer server/client, define RPCs with the @rpc annotation (call v
+- `godot-nodes-scenes`: Structure a Godot 4.7 project with the scene tree and node composition: build reusable scenes, instance PackedScenes at runtime, navigate the tree saf
+- `godot-physics`: Use Godot 4.7 physics bodies and detection in 2D and 3D: RigidBody, StaticBody, Area, and CharacterBody; collision layers vs masks; contact/overlap si
+- `godot-resources`: Design data-driven Godot 4.7 games with custom Resource classes: define typed data with class_name + @export, save/load .tres/.res files, instance and
+- `godot-shaders`: Write Godot 4.7 shaders in the Godot Shading Language: canvas_item shaders for 2D and spatial shaders for 3D, with vertex/fragment functions, uniforms
+- `godot-signals-groups`: Build event-driven, decoupled Godot 4.7 gameplay with signals and node groups: declare and emit custom signals, connect with Callables (incl
+- `godot-tilemap`: Build and edit tile-based 2D levels in Godot 4.7 with TileMapLayer and TileSet: paint layers, set up collision/navigation/custom-data on tiles, autoti
+- `godot-ui-control`: Build Godot 4.7 user interfaces with Control nodes: anchors and offsets for responsive layout, Container nodes (VBox/HBox/Grid/Margin) for automatic a
+- `input-systems`: Architect game input — action mapping (abstracting keys into named actions), rebinding with conflict detection and persistence, multi-device support (
+- `itch-publish`: Publish and update a game on itch.io: create the project page and upload builds with the butler CLI (butler push) to named channels
+- `level-design`: Design and build playable levels — the blockout/whitebox-to-playable workflow, player metrics and grid layout, pacing and flow (tension/rest curve), g
+- `love2d-core`: Structure and debug a LÖVE (Love2D) game in Lua: the love.load/update/draw loop, delta-time movement, input, and screen states
+- `performance-optimization`: Find and fix game performance problems methodically — measure with the engine profiler first, reason about the frame-time budget, locate the CPU-vs-GP
+- `phaser-arcade-physics`: Use Phaser 4 Arcade Physics: enable the world, give sprites bodies, set velocity/acceleration/gravity, and resolve collisions with colliders, overlaps
+- `phaser-core`: Set up and debug a Phaser 4 game: the Game config, the Scene lifecycle (init/preload/create/update), the asset loader, cameras, and cross-scene commun
+- `physics-tuning`: Tune game physics for stable, good-feeling motion — fixed vs variable timestep, render interpolation, mass/gravity/drag, continuous collision detectio
+- `pixijs-rendering`: Build a PixiJS v8 render layer: create the async Application, load textures with Assets, compose the scene graph with Container and Sprite, drive the 
+- `platformer`: Build a 2D platformer: run/jump control with coyote time, jump buffering, and variable jump height, plus tiled levels and hazards
+- `procedural-gen`: Generate game content procedurally — seeded deterministic RNG, value/Perlin/ Simplex noise for terrain and heightmaps, grid dungeon generation (rooms 
+- `prototype-fast`: Build a playable prototype in about an hour to answer one question — is it fun? — with greybox primitives, a hard timebox, and explicit keep/kill crit
+- `puzzle`: Build a puzzle game: grid/board state, move input, rule-based resolution (match-3 cascades, sokoban pushes, tile logic), scoring, and undo
+- `pygame-core`: Structure a pygame (pygame-ce) game in Python: the init/event/update/draw loop, delta-time movement, Surface/Rect blitting, keyboard/mouse input, and 
+- `roblox-characters`: Build respawn-safe Roblox character systems around Players, CharacterAdded/CharacterRemoving, Humanoid, HumanoidRootPart, Animator, R6/R15 rigs, movem
+- `roblox-datastores`: Persist player data in Roblox with DataStoreService: GetDataStore, GetAsync/ SetAsync/UpdateAsync/IncrementAsync wrapped in pcall, load-on-join and sa
+- `roblox-luau`: Script a Roblox experience in Luau: get services, create and parent Instances, connect events, run server Scripts vs client LocalScripts, and communic
+- `roblox-networking`: Design and harden Roblox client/server networking with RemoteEvent, RemoteFunction, and UnreliableRemoteEvent; server authority, argument and Instance
+- `roblox-physics`: Implement Roblox physical simulation and queries with assemblies, anchoring, constraints, collision groups, CanCollide/CanTouch/CanQuery, raycasts and
+- `roblox-studio-workflow`: Modify living Roblox Studio projects safely: inspect Explorer and execution locations, preserve existing structure, reuse modules/remotes, create mean
+- `roblox-ui`: Build production Roblox interfaces with ScreenGui/PlayerGui lifecycle, responsive UDim2 layouts, safe insets, reusable editable Instances, cross-devic
+- `roguelike`: Build a roguelike: turn-based grid movement, procedural dungeons, permadeath, field-of-view, and loot tables
+- `rpg`: Build an RPG: stats and leveling, inventory and equipment, quests, branching dialogue, save/load, and combat
+- `save-systems`: Design save/load for game state — choosing what to serialize, file formats, save slots, atomic crash-safe writes, schema versioning and migration, and
+- `shader-programming`: Write game shaders from cross-engine fundamentals — the vertex→fragment pipeline, coordinate spaces, UV math, and common 2D/3D effects (tint, UV scrol
+- `steam-publish`: Publish or update a game on Steam with Steamworks and SteamPipe: configure depots and packages, upload builds with steamcmd, set a build live on a bra
+- `survival-crafting`: Build a survival-crafting game: resource gathering, inventory, crafting and a tech tree, needs (hunger/thirst/temperature), and base building
+- `threejs-gltf-loading`: Load glTF/GLB models in three.js with GLTFLoader and play their skinned animations with AnimationMixer, including DRACO/Meshopt-compressed meshes and 
+- `threejs-materials-lighting`: Light and shade a three.js scene: choose materials (MeshStandardMaterial PBR vs unlit MeshBasicMaterial), add ambient/hemisphere/directional/point/spo
+- `threejs-scene-setup`: Stand up a three.js scene: import maps and the three/addons path, the Scene/PerspectiveCamera/WebGLRenderer trio, the setAnimationLoop render loop, re
+- `tower-defense`: Build a tower defense: enemies pathing along lanes, wave spawning, towers that auto-target and fire, an economy, and lives
+- `unity-animation`: Drive Unity 6.3 LTS character animation with Animator Controllers: states, transitions, parameters, blend trees, animation layers, and humanoid Avatar
+- `unity-build-pipeline`: Build and ship Unity 6.3 LTS players: build settings and scenes, player/quality settings, the IL2CPP vs Mono scripting backend, managed code stripping
+- `unity-csharp-scripting`: Write Unity 6.3 LTS C# gameplay scripts: the MonoBehaviour lifecycle (Awake/OnEnable/Start/Update/FixedUpdate/LateUpdate), GameObject and component ac
+- `unity-input-system`: Wire player input in Unity 6.3 LTS with the Input System package: Input Actions, action maps, the PlayerInput component, and reading values via callba
+- `unity-navmesh`: Add AI navigation in Unity 6.3 LTS: bake a NavMesh with the AI Navigation package (NavMeshSurface), move agents with NavMeshAgent.SetDestination, and 
+- `unity-physics`: Set up 3D physics in Unity 6.3 LTS: Rigidbody movement and forces, colliders, triggers vs collisions, layer-based collision, raycasts, and joints
+- `unity-scriptableobjects`: Architect Unity 6.3 LTS data and decoupling with ScriptableObjects: config/data assets, shared runtime variables, event channels, and runtime sets/reg
+- `unity-tilemap-2d`: Build and script 2D tilemaps in Unity 6.3 LTS: the Grid + Tilemap components, the Tile Palette, tilemap colliders, rule tiles, and runtime SetTile/Get
+- `unreal-behavior-trees`: Build NPC AI in Unreal Engine 5 with Behavior Trees and Blackboards: composites (Selector/Sequence), tasks, decorators, services, and running the tree
+- `unreal-blueprints`: Build Unreal Engine 5 gameplay with Blueprint visual scripting: Blueprint Classes, the Event Graph and Construction Script, variables/functions/macros
+- `unreal-cpp-gameplay`: Write Unreal Engine 5 C++ gameplay code: the UCLASS/UPROPERTY/UFUNCTION reflection macros, the Gameplay Framework (GameMode, Pawn, Character, PlayerCo
+- `unreal-enhanced-input`: Set up player input in Unreal Engine 5 with Enhanced Input: Input Actions, Input Mapping Contexts, modifiers and triggers, adding the mapping context,
+- `unreal-niagara`: Create and control VFX in Unreal Engine 5 with Niagara: systems and emitters, modules and the spawn/update stages, exposed User parameters, and spawni
+- `unreal-packaging`: Package and ship an Unreal Engine 5 project: the Platforms menu Package Project flow, build configurations (Development vs Shipping), cooking content,
+- `visual-novel`: Build a visual novel: a branching script, character and background display, a text box with choices, save/load, backlog, and skip/auto
+
+## Android (33)
+
+- `adaptive`: Instructions to make or update an app's UI so that it adapts to different Android devices including phones, tablets, foldables, laptops, desktop, TV, 
+- `agp-9-upgrade`: Upgrades, or migrates, an Android project to use Android Gradle Plugin (AGP) version 9
+- `android-cli`: Provides instructions for installing and using the `android` CLI
+- `android-for-cars-parked-apps`: Adapt existing Android video streaming apps, games, and web browsers to run as parked apps on Android Auto and Android Automotive OS
+- `android-intent-security`: Best practices for Android Intent security
+- `android-permissions-security`: Audits, detects gaps, and remediates Android permissions and IPC component security vulnerabilities
+- `android-profiler`: 'Records and analyzes Android performance data and diagnoses performance bottlenecks across user apps, system apps, and system services, even if the u
+- `anr-audit-and-fix`: Audits Android codebases for ANR risks and diagnoses ANR stack dumps
+- `appfunctions`: Analyzes Android apps to identify key user workflows for AppFunctions such as creating a note, playing media, or sending an automated or AI agent trig
+- `camerax`: Provide technical guidance for Android camera development with CameraX
+- `display-glasses-with-jetpack-compose-glimmer`: Provides guidelines for developing projected Android XR apps for display glasses using the Jetpack Compose Glimmer UI toolkit
+- `edge-to-edge`: Use this skill to migrate your Jetpack Compose app to add adaptive edge-to-edge support and troubleshoot common issues
+- `engage-sdk-integration`: Helps developers integrate, debug, and resolve Play Engage SDK implementation issues
+- `glance-canonical-layouts`: Use this skill to create home screen widgets using Jetpack Glance Canonical Layouts from the Android Platform Samples project, or when asked to implem
+- `jetpack-compose-performance`: Diagnose and optimize Android Jetpack Compose UI code
+- `leanback-to-compose-tv-migration`: Provides instructions and architectural patterns for migrating Android TV applications from legacy Leanback UI Toolkit, Android Views, or Support Frag
+- `litert-lm`: Builds an Android app that runs an open text LLM on the device, on the CPU or the GPU, with the LiteRT-LM Kotlin API (com.google.ai.edge.litertlm:lite
+- `litert-runtime`: Configures and implements LiteRT (.tflite) on-device inference on Android in Kotlin using the CompiledModel API on CPU and GPU
+- `media3-cast-integration`: Implements Google Cast support in Android apps using Jetpack Media3
+- `migrate-xml-views-to-jetpack-compose`: Provides a structured workflow for migrating an Android XML View to Jetpack Compose
+- `ml-kit-genai-prompt-api`: Analyzes Android codebases to implement ML Kit GenAI Prompt API
+- `navigation-3`: Learn how to install and migrate to Jetpack Navigation 3, and how to implement features and patterns such as deep links, multiple backstacks, scenes (
+- `navigation-event`: Intercept back gestures and run Predictive Back animations using the NavigationEvent (androidx.navigationevent) library in Compose Android
+- `play-billing-library-version-upgrade`: Use this skill when upgrading or migrating an Android project from any legacy Google Play Billing Library (PBL) version to the latest stable version o
+- `play-policy-insights`: Automated auditor designed to verify Android applications against Google Play Policy domains
+- `projected-hardware`: Provides instructions and workflows for accessing and managing hardware on Android XR projected devices, such as audio glasses and display glasses
+- `r8-analyzer`: Analyzes Android build files and R8 keep rules to identify redundancies, broad package-wide rules, and rules that subsume library consumer keep rules
+- `restore-credentials`: Provides knowledge and workflows to implement Android's Restore Credentials feature using the androidx.credentials library
+- `styles`: Use this skill to integrate the Jetpack Compose Styles API into an Android project
+- `testing-setup`: Analyze and create a testing strategy for Android apps - install testing libraries, set up test infrastructure, create harnesses for unit tests, UI te
+- `verified-email`: Provides a complete workflow for implementing verified email retrieval on Android Credential Manager API
+- `wear-compose-m3`: Guidance for Wear OS Compose Material3 (Wear Compose Material 3 / Wear Compose Material3) watch and wearable apps
+- `wear-widgets`: Create, migrate, update, and verify Wear OS widgets using Glance Wear and Remote Compose in an Android project
+
+## Flutter / Dart (31)
+
+- `api-review`: Reviews the specified code against the canonical API Design guidelines
+- `code-documentation`: Guide for writing effective code documentation, including docstrings, JSDoc, dartdoc, and implementation comments
+- `code-review`: Performs a comprehensive, multi-step code review of pull requests or local code changes, using iterative refinement (generation, critique, synthesis) 
+- `dart-add-unit-test`: Write and organize unit tests for functions, methods, and classes using `package:test`
+- `dart-build-cli-app`: Architectural patterns, entrypoint structure, exit codes, stream routing, and subprocess spawning for Dart command-line interface (CLI) applications
+- `dart-collect-coverage`: Collect coverage using the coverage packge and create an LCOV report
+- `dart-fix-runtime-errors`: Uses get_runtime_errors and lsp to fetch an active stack trace, locate the failing line, apply a fix, and verify resolution via hot_reload
+- `dart-generate-test-mocks`: Define and generate mock objects for external dependencies using `package:mockito` and `build_runner`
+- `dart-migrate-to-checks-package`: - Replace the usage of `expect` and similar functions from `package:matcher` to `package:checks` equivalents
+- `dart-resolve-package-conflicts`: Workflow for fixing package version conflicts
+- `dart-run-static-analysis`: Execute `dart analyze` to identify warnings and errors, and use `dart fix --apply` to automatically resolve mechanical lint issues
+- `dart-setup-ffi-assets`: "Guides agents in compiling and packaging C/C++ source code into dynamic or static libraries (Code Assets) using Dart's Native Assets hook system (via
+- `dart-use-doc-examples`: "How to inject external code examples into Dartdoc using the {@example} directive, and how to filter those files using #hide, #region, and #endregion 
+- `dart-use-ffigen`: Guide agents to use `package:ffigen` to automatically generate FFI bindings instead of writing them manually
+- `dart-use-path-package`: Cross-platform file and directory path manipulation, segment splitting, extension extraction, and context conversion using `package:path` and `package
+- `dart-use-pattern-matching`: Applies Dart 3 pattern matching, switch expressions, and destructuring idiomatically to validate data schemas, handle algebraic data types, and decomp
+- `dart-use-primary-constructors`: Help users write syntactically and semantically correct primary constructors in Dart, and migrate/use the new constructor syntax, empty-body semicolon
+- `dart-write-documentation`: "Rules and formatting guidelines for writing Dart /// API documentation and doc comments
+- `flutter-add-integration-test`: Configures Flutter Driver for app interaction and converts MCP actions into permanent integration tests
+- `flutter-add-widget-preview`: Adds interactive widget previews to the project using the previews.dart system
+- `flutter-add-widget-test`: Implement a component-level test using `WidgetTester` to verify UI rendering and user interactions (tapping, scrolling, entering text)
+- `flutter-apply-architecture-best-practices`: Architects a Flutter application using the recommended layered approach (UI, Logic, Data)
+- `flutter-build-responsive-layout`: Use `LayoutBuilder`, `MediaQuery`, or `Expanded/Flexible` to create a layout that adapts to different screen sizes
+- `flutter-fix-layout-issues`: Fixes Flutter layout errors (overflows, unbounded constraints) using Dart and Flutter MCP tools
+- `flutter-implement-json-serialization`: Create model classes with `fromJson` and `toJson` methods using `dart:convert`
+- `flutter-setup-declarative-routing`: Configure `MaterialApp.router` using a package like `go_router` for advanced URL-based navigation
+- `flutter-setup-localization`: Add `flutter_localizations` and `intl` dependencies, enable "generate true" in `pubspec.yaml`, and create an `l10n.yaml` configuration file
+- `flutter-use-http-package`: Use the `http` package to execute GET, POST, PUT, or DELETE requests
+- `grill-with-docs`: Grilling session that challenges your plan against the existing domain model, sharpens terminology, and updates documentation (CONTEXT.md, ADRs) inlin
+- `natural-writing`: Contains well-defined rules for creating natural, accurate, and readable writing
+- `unix-cli-best-practices`: Safe, portable, and efficient command-line patterns for macOS/BSD Unix tools (grep, find, sed, awk, xargs, mdfind, pbcopy, open) and modern alternativ
+
+## Expo / React Native (24)
+
+- `eas-app-stores`: Build and submit iOS and Android apps with EAS to TestFlight, the App Store, or Google Play
+- `eas-hosting`: Deploy Expo websites and Expo Router API routes to EAS Hosting - export the web bundle, run eas deploy for production and PR preview URLs, manage envi
+- `eas-observe`: Use for anything related to EAS Observe - adding `expo-observe` to an Expo project (AppMetricsRoot/ObserveRoot HOC, markInteractive and ObserveInterac
+- `eas-simulator`: "Run and control a user's app on a remote iOS/Android simulator hosted on EAS cloud
+- `eas-update`: "Configure and use EAS Update for over-the-air JavaScript and asset updates with expo-updates and EAS CLI
+- `eas-update-insights`: "Check the health of published EAS Update: crash rates, install/launch counts, unique users, payload size, and the split between embedded and OTA user
+- `eas-workflows`: Helps understand and write EAS workflow YAML files for Expo projects
+- `expo-animation`: Build animations in React Native and Expo, making the decisions in the order that determines whether they feel right — should it animate, which thread
+- `expo-app-clip`: Add an iOS App Clip target to an Expo app
+- `expo-brownfield`: Integrate Expo and React Native into an existing native iOS or Android app
+- `expo-data-fetching`: Use when implementing or debugging ANY network request, API call, or data fetching
+- `expo-design-system`: Build and maintain a design system inside an Expo app - a reusable theme of design tokens (color, spacing, typography, radius, shadow, motion), reusab
+- `expo-dev-client`: Build and distribute Expo development clients locally or via TestFlight for internal testing
+- `expo-dom`: Use Expo DOM components to run web code in a webview on native and as-is on web
+- `expo-examples`: Expo's official example projects - the expo/examples repo of ~70 `with-*` integrations (Stripe, Clerk, Supabase, OpenAI, maps, Reanimated, SQLite, Ski
+- `expo-migrate-module`: Migrate an existing Apple/Swift Expo native module from the Expo Modules API 1.0 definition DSL to the 2.0 macro API (sometimes called v2) while prese
+- `expo-module`: Guide for creating and writing Expo native modules and views using the Expo Modules API (Swift, Kotlin, TypeScript)
+- `expo-native-ui`: Build beautiful, native-feeling Expo screens
+- `expo-overview`: "Entry point and router for every Expo or EAS task
+- `expo-project-structure`: Folder structure for a new Expo app
+- `expo-router`: Navigation and routing for Expo Router
+- `expo-ui`: "Build native UI with the @expo/ui package: real SwiftUI on iOS and Jetpack Compose on Android
+- `expo-upgrade`: Guidelines for upgrading Expo SDK versions and fixing dependency issues
+- `expo-web-to-native`: Migrate an existing web React app to a native iOS/Android app with Expo

@@ -12,6 +12,8 @@ description: >
   when unsure which gamedev skill to use.
 ---
 
+> **W tym projekcie:** wszystkie skille, które ten router wskazuje (np. `skills/godot/godot-physics/`), leżą w `.claude/skill-library/<nazwa-skilla>/SKILL.md`. Czytaj je stamtąd narzędziem Read.
+
 # Master Router — Game-Development Skill Dispatcher
 
 The entry point for game-development work. It fingerprints the project to pick **one** engine,

@@ -8,15 +8,15 @@ Użytkownik pisze po polsku: odpowiadaj po polsku, krótko i konkretnie.
 Użytkownik nie będzie mówił, którego skilla użyć. Przed każdym zadaniem:
 
 1. Dopasuj zadanie do tabeli poniżej i wywołaj pasujące skille narzędziem Skill, zanim zaczniesz pracę.
-2. Przy grach zacznij od `gamedev-router`: wykrywa silnik i wskazuje właściwe skille.
+2. Przy grach zacznij od `gamedev-router`: wykrywa silnik i wskazuje właściwe skille. Przy grach i aplikacjach mobilnych użyj `skill-library`.
 3. Gdy nic nie pasuje, użyj `find-skills` (wyszukuje i instaluje skille z GitHuba). Jeśli nic nie ma, stwórz skill przez `skill-creator`.
 4. Nie pytaj użytkownika o wybór skilla. Wspomnij jednym zdaniem, którego używasz.
 
-Skille projektu leżą płasko w `.claude/skills/<nazwa>/`. Źródła i licencje: `.claude/skills/SOURCES.md`.
+Aktywne skille: `.claude/skills/<nazwa>/` (ładują się na starcie). Biblioteka 164 skilli do gier i mobilnych: `.claude/skill-library/<nazwa>/SKILL.md`, spis w `.claude/skill-library/INDEX.md`. Nie ładują się na starcie, żeby oszczędzać kontekst; czytaj je narzędziem Read. Źródła i licencje: `.claude/skills/SOURCES.md`.
 
 ## Mapa: zadanie → skill
 
-### Gry
+### Gry (skille z biblioteki, oprócz `gamedev-router` i `roblox-dev:*`)
 | Zadanie | Skille |
 |---|---|
 | Dowolna gra, nie wiadomo od czego zacząć | `gamedev-router` |
@@ -28,12 +28,12 @@ Skille projektu leżą płasko w `.claude/skills/<nazwa>/`. Źródła i licencje
 | Inne silniki | `bevy-ecs`, `defold-core`, `love2d-core`, `pygame-core`, `ebitengine-game` |
 | Gatunki, mechaniki, game feel, audio, AI, zapis, multiplayer, wydanie (Steam/itch) | skille gatunków i dyscyplin wskazane przez `gamedev-router` |
 
-### Aplikacje mobilne
+### Aplikacje mobilne (Android, Flutter, Expo: skille z biblioteki)
 | Zadanie | Skille |
 |---|---|
 | Android natywnie (Kotlin, Jetpack Compose, Gradle) | oficjalne skille Google: `jetpack-compose-*`, `adaptive`, `android-cli`, `android-profiler`, `migrate-xml-views-to-jetpack-compose` i reszta z `android/skills` + `anthropic-skills:android-*` |
 | Flutter / Dart | oficjalne skille `flutter-*`, `dart-*` |
-| React Native / Expo (Android i iOS z jednego kodu) | oficjalne skille `expo-*`, `eas-*` + `animate-expo` |
+| React Native / Expo (Android i iOS z jednego kodu) | najpierw `expo-overview`, potem `expo-*`, `eas-*` + `animate-expo` |
 | iOS / Swift | `write-swift`, `apple-design` |
 | Aplikacja webowa „jak natywna” (PWA) | `mobile-native`, `anthropic-skills:pwa-offline-cache` |
 
